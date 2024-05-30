@@ -11,7 +11,7 @@
 **Cloner le dépôt Git**
    ```bash
    git clone https://github.com/raphaeldeletoille/exercice
-   cd aks-store-demo
+   cd exercice
   ```
 ---
 **Déployer votre application localement**
