@@ -52,9 +52,9 @@ Arrêter et supprimer les conteneurs
 
 Construire et pousser les images Docker sur ACR
   ```
-az acr build --registry $ACRNAME --image aks-store-demo/product-service:latest ./src/product-service/
-az acr build --registry $ACRNAME --image aks-store-demo/order-service:latest ./src/order-service/
-az acr build --registry $ACRNAME --image aks-store-demo/store-front:latest ./src/store-front/
+az acr build --registry $ACRNAME --image exercice/product-service:latest ./src/product-service/
+az acr build --registry $ACRNAME --image exercice/order-service:latest ./src/order-service/
+az acr build --registry $ACRNAME --image exercice/store-front:latest ./src/store-front/
   ```
 
 Lister les dépôts dans ACR
@@ -77,13 +77,13 @@ Modifier aks-store-quickstart.yaml avec les images ACR
 containers:
 ...
 - name: order-service
-  image: <acrName>.azurecr.io/aks-store-demo/order-service:latest
+  image: <acrName>.azurecr.io/exercice/order-service:latest
 ...
 - name: product-service
-  image: <acrName>.azurecr.io/aks-store-demo/product-service:latest
+  image: <acrName>.azurecr.io/exercice/product-service:latest
 ...
 - name: store-front
-  image: <acrName>.azurecr.io/aks-store-demo/store-front:latest
+  image: <acrName>.azurecr.io/exercice/store-front:latest
 
   ```
 
