@@ -21,6 +21,7 @@ Créer un cluster Kubernetes (Standard_D2_v2) et donner les droits ACR Pull à l
   ```
 ---
 **Déployer votre application localement**
+
 Lancer les conteneurs avec Docker Compose
 
   ```
@@ -48,6 +49,7 @@ Arrêter et supprimer les conteneurs
   ```
 ---
 **Déployer votre application sur Azure**
+
 Construire et pousser les images Docker sur ACR
   ```
 az acr build --registry $ACRNAME --image aks-store-demo/product-service:latest ./src/product-service/
