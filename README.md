@@ -8,6 +8,11 @@
 
 ## Étapes
 
+**Déployer les prérequis sur Azure**
+Créer un Azure Container Registry (ACR) avec Terraform
+
+Créer un cluster Kubernetes (Standard_D2_v2) et donner les droits ACR Pull à l'identité de Kubernetes (Managed Identity) sur votre ACR
+
 **Cloner le dépôt Git**
    ```bash
    git clone https://github.com/raphaeldeletoille/exercice
@@ -42,8 +47,6 @@ Arrêter et supprimer les conteneurs
   ```
 ---
 **Déployer votre application sur Azure**
-Créer un Azure Container Registry (ACR) avec Terraform
-
 Construire et pousser les images Docker sur ACR
   ```
 az acr build --registry $ACRNAME --image aks-store-demo/product-service:latest ./src/product-service/
@@ -53,8 +56,6 @@ az acr build --registry $ACRNAME --image aks-store-demo/store-front:latest ./src
 
 Lister les dépôts dans ACR
 az acr repository list --name $ACRNAME --output table
-
-Créer un cluster Kubernetes (Standard_D2_v2) et donner les droits ACR Pull à l'identité de Kubernetes (Managed Identity)
 
 Connecter son terminal au cluster Kubernetes (Vous trouverez comment faire depuis l'interface graphique Azure Portail)
 
