@@ -9,6 +9,7 @@
 ## Étapes
 
 **Déployer les prérequis sur Azure**
+
 Créer un Azure Container Registry (ACR) avec Terraform
 
 Créer un cluster Kubernetes (Standard_D2_v2) et donner les droits ACR Pull à l'identité de Kubernetes (Managed Identity) sur votre ACR
