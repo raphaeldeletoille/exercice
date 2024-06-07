@@ -57,6 +57,12 @@ Arrêter et supprimer les conteneurs
 ---
 **Déployer votre application sur Azure**
 
+Propagez les permissions distribués par terraform 
+ ```
+Vous pouvez trouver l'acr-resource-id dans JsonView depuis l'interface graphique de votre container registry (Azure Portail) 
+az aks update -n <myAKSCluster> -g <myResourceGroup> --attach-acr <acr-resource-id>
+ ```
+
 Construire et pousser les images Docker sur ACR
   ```
 az acr build --registry $ACRNAME --image exercice/product-service:latest ./src/product-service/
