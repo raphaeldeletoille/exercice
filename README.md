@@ -14,6 +14,11 @@ Créer un Azure Container Registry (ACR). Donnez à votre compte utilisateur les
 
 Créer un cluster Kubernetes (Standard_D2_v2) en sku_tier "Standard". L'identity doit être en mode User Assigned avec l'id : 8921e420-4918-4515-82c9-e466ee042d43
 
+  identity {
+    type = "UserAssigned"
+    identity_ids = ["/subscriptions/556b3479-49e0-4048-ace9-9b100efe5b6d/resourceGroups/exercice-aks/providers/Microsoft.ManagedIdentity/userAssignedIdentities/PullIdentity"]
+  }
+
 **Cloner le dépôt Git**
    ```bash
    git clone https://github.com/raphaeldeletoille/exercice
