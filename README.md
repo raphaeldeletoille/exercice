@@ -8,11 +8,11 @@
 
 ## Étapes
 
-**Déployer les prérequis sur Azure**
+**Déployer les prérequis sur Azure** (en Terraform)
 
-Créer un Azure Container Registry (ACR) avec Terraform. Donnez à votre compte les droits ACR Push
+Créer un Azure Container Registry (ACR). Donnez à votre compte utilisateur les droits ACR Push
 
-Créer un cluster Kubernetes (Standard_D2_v2) en sku "Standard" et donner les droits ACR Pull à l'identité de Kubernetes (azurerm_kubernetes_cluster.XXX.identity[0].principal_id) sur votre ACR
+Créer un cluster Kubernetes (Standard_D2_v2) en sku_tier "Standard". L'identity doit être en mode User Assigned avec l'id : 8921e420-4918-4515-82c9-e466ee042d43
 
 **Cloner le dépôt Git**
    ```bash
