@@ -50,13 +50,6 @@ Arrêter et supprimer les conteneurs
 ---
 **Déployer votre application sur Azure**
 
-Propagez les permissions distribués par terraform.
-
-Vous pouvez trouver l'acr-resource-id dans JsonView depuis l'interface graphique de votre container registry (Azure Portail) 
- ```
-az aks update -n <myAKSCluster> -g <myResourceGroup> --attach-acr <acr-resource-id>
- ```
-
 Construire et pousser les images Docker sur ACR
   ```
 az acr build --registry $ACRNAME --image exercice/product-service:latest ./src/product-service/
@@ -67,7 +60,7 @@ az acr build --registry $ACRNAME --image exercice/store-front:latest ./src/store
 Lister les dépôts dans ACR
 az acr repository list --name $ACRNAME --output table
 
-Connecter son terminal au cluster Kubernetes (Vous trouverez comment faire depuis l'interface graphique Azure Portail)
+Connecter son terminal au cluster Kubernetes (Vous trouverez comment faire depuis l'interface graphique Azure Portal)
 
 Tester la connection en affichant les serveurs utilisés par Kubernetes
   ```
@@ -79,7 +72,7 @@ Lister l'url de connection à l'ACR
   az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
   ```
 
-Modifier aks-store-quickstart.yaml avec les images ACR
+Modifier aks-store-quickstart.yaml pour que votre Cluster Kubernetes récupère les images dans votre ACR
   ```
 containers:
 ...
