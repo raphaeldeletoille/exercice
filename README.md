@@ -3,7 +3,7 @@
 ## Prérequis
 - Git
 - Docker Desktop
-- Kubectl 1.29
+- Kubectl 1.30
 - Azure Subscription
 
 ## Étapes
@@ -12,14 +12,7 @@
 
 Créer un Azure Container Registry (ACR). Donnez à votre compte utilisateur les droits ACR Push
 
-Créer un cluster Kubernetes (Standard_D2_v2) en sku_tier "Standard". L'identity doit être en mode User Assigned avec l'id : 8921e420-4918-4515-82c9-e466ee042d43
-
-   ```bash
-  identity {
-    type = "UserAssigned"
-    identity_ids = ["/subscriptions/556b3479-49e0-4048-ace9-9b100efe5b6d/resourceGroups/exercice-aks/providers/Microsoft.ManagedIdentity/userAssignedIdentities/PullIdentity"]
-  }
-  ```
+Créer un cluster Kubernetes (Standard_D2_v2) en sku_tier "Standard". L'identité pour votre Cluster doit être "acridentity" (déjà créée sur Azure). Cette identité doit être utilisée dans le bloc identity (User Assigned) et kubelet identity.
 
 **Cloner le dépôt Git**
    ```bash
